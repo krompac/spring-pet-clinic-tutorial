@@ -14,7 +14,7 @@
     </parent>
     <groupId>com.petclinic</groupId>
     <artifactId>pet-clinic-tutorial</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.2</version>
     <name>pet-clinic-tutorial</name>
     <description>Pet clinic application following udemy tutorial</description>
 
@@ -43,6 +43,6 @@
 
     <scm>
         <developerConnection>scm:git:https://github.com/krompac/spring-pet-clinic-tutorial.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>pet-clinic-tutorial-0.0.2</tag>
   </scm>
 </project>
