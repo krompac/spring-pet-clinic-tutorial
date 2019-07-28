@@ -1,6 +1,7 @@
 package com.petclinic.petclinictutorial.Bootstrap;
 
 import com.petclinic.petclinictutorial.model.Owner;
+import com.petclinic.petclinictutorial.model.Pet;
 import com.petclinic.petclinictutorial.model.PetType;
 import com.petclinic.petclinictutorial.model.Vet;
 import com.petclinic.petclinictutorial.services.OwnerService;
@@ -9,6 +10,8 @@ import com.petclinic.petclinictutorial.services.VetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -31,16 +34,36 @@ public class DataLoader implements CommandLineRunner {
         PetType cat = new PetType("Cat");
         PetType savedCatType = petTypeService.save(cat);
 
-        Owner owner1 = new Owner();
-        owner1.setFirstName("Pero");
-        owner1.setLastName("Peric");
+        Owner pero = new Owner();
+        pero.setFirstName("Pero");
+        pero.setLastName("Peric");
+        pero.setAddress("Ulica1");
+        pero.setCity("Grad1");
+        pero.setTelephone("12345");
 
-        Owner owner2 = new Owner();
-        owner2.setFirstName("Ivan");
-        owner2.setLastName("Ivic");
+        Pet perosDog = new Pet();
+        perosDog.setPetType(savedDogPetType);
+        perosDog.setOwner(pero);
+        perosDog.setName("Medo");
+        perosDog.setBirthDate(LocalDate.now());
+        pero.getPets().add(perosDog);
 
-        ownerService.save(owner1);
-        ownerService.save(owner2);
+        Owner ivan = new Owner();
+        ivan.setFirstName("Ivan");
+        ivan.setLastName("Ivic");
+        ivan.setAddress("Ulica2");
+        ivan.setCity("Grad2");
+        ivan.setTelephone("543341");
+
+        Pet ivansCat = new Pet();
+        ivansCat.setPetType(savedCatType);
+        ivansCat.setOwner(ivan);
+        ivansCat.setName("mica");
+        ivansCat.setBirthDate(LocalDate.now());
+        ivan.getPets().add(ivansCat);
+
+        ownerService.save(pero);
+        ownerService.save(ivan);
 
         System.out.println("Loaded owners...");
 
