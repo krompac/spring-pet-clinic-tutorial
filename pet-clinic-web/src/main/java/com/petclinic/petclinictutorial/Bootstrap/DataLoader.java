@@ -43,7 +43,7 @@ public class DataLoader implements CommandLineRunner {
         Specialty dentistry = new Specialty();
         dentistry.setDescription("Dentistry");
 
-        Arrays.asList(new Specialty[]{radiology, surgery, dentistry}).forEach(specialty -> specialtyService.save(specialty));
+        Arrays.asList(new Specialty[]{radiology, surgery, dentistry}).forEach(specialtyService::save);
 
         PetType dog = new PetType("Dog");
         PetType savedDogPetType = petTypeService.save(dog);

@@ -19,6 +19,12 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
             <groupId>com.petclinic</groupId>
             <artifactId>pet-clinic-data</artifactId>
             <version>0.0.2</version>
