@@ -35,4 +35,9 @@ public class Pet extends BaseEntity{
         owner.getPets().add(this);
         this.setOwner(owner);
     }
+
+    public void addVisit(Visit visit){
+        visits.add(visit);
+        visit.setPet(this);
+    }
 }
