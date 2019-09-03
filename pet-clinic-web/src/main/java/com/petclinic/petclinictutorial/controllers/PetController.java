@@ -64,7 +64,7 @@ public class PetController {
             result.rejectValue("name", "duplicate", "already exists");
         }
 
-        owner.getPets().add(pet);
+        owner.addPet(pet);
 
         if (result.hasErrors()){
             model.addAttribute("pet", pet);

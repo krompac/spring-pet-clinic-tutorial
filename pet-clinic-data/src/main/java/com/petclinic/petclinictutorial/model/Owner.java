@@ -53,4 +53,9 @@ public class Owner extends Person {
 
         return null;
     }
+
+    public void addPet(Pet pet){
+        pets.add(pet);
+        pet.addOwner(this);
+    }
 }
